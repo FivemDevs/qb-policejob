@@ -47,33 +47,51 @@ Config.Locations = {
    ["impound"] = {
        [1] = vector4(436.68, -1007.42, 27.32, 180.0),
        [2] = vector4(-436.14, 5982.63, 31.34, 136.0),
+			 [6] = vector4(401.39, -1609.08, 29.29, 152.73),
    },
    ["helicopter"] = {
        [1] = vector4(449.168, -981.325, 43.691, 87.234),
-       [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
+			 [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
+			 [3] = vector4(-475.29, 5988.53, 31.34, 130.01),
+			 [4] = vector4(1864.56, 3650.74, 35.64, 207.97),
+			 [5] = vector4(578.6, 12.32, 103.23, 286.45),
    },
    ["armory"] = {
-       [1] = vector3(462.23, -981.12, 30.68),
+	 		 [1] = vector4(439.88, -988.28, 34.3, 175.66),
+	 	 	 [3] = vector4(-435.16, 5998.79, 31.72, 222.43),
+	 	 	 [4] = vector4(1841.13, 3691.71, 34.26, 31.87),
+	 	 	 [5] = vector4(603.73, -5.88, 85.49, 243.35),
    },
    ["trash"] = {
        [1] = vector3(439.0907, -976.746, 30.776),
    },
    ["fingerprint"] = {
-       [1] = vector3(460.9667, -989.180, 24.92),
+	 		 [1] = vector3(460.9667, -989.180, 24.92),
+	 	 	 [5] = vector4(568.99, 2.26, 90.65, 172.78),
    },
    ["evidence"] = {
-       [1] = vector3(442.1722, -996.067, 30.689),
+	 		 [1] = vector4(456.56, -987.89, 27.49, 1.63),
+	 	 	 [3] = vector4(-439.03, 6009.57, 27.99, 115.82),
+	 	 	 [4] = vector4(1852.33, 3697.66, 34.26, 30.4),
+	 	 	 [5] = vector4(586.39, 13.19, 90.65, 161.33),
    },
    ["evidence2"] = {
-       [1] = vector3(451.7031, -973.232, 30.689),
+	 		 [1] = vector4(458.44, -987.88, 27.49, 0.08),
+	 	 	 [3] = vector4(-439.1, 6011.26, 27.99, 41.35),
+	 	 	 [5] = vector4(584.2, 14.09, 90.65, 87.36),
    },
    ["evidence3"] = {
-       [1] = vector3(455.1456, -985.462, 30.689),
+	 		 [1] = vector4(459.53, -988.64, 27.49, 273.46),
+	 	 	 [3] = vector4(-437.05, 6012.64, 27.99, 44.04),
+	 	 	 [5] = vector4(588.93, 16.39, 90.65, 0.2),
    },
    ["stations"] = {
        [1] = {label = "Police Station", coords = vector4(428.23, -984.28, 29.76, 3.5)},
        [2] = {label = "Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249)},
        [3] = {label = "Police Station Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},
+			 [4] = {label = "Politie - Sandy Shores", coords = vector4(1854.52, 3687.8, 34.26, 29.92)},
+			 [5] = {label = "Politie - Vinewood", coords = vector4(627.73, 5.44, 82.72, 10.12)},
+			 [6] = {label = "Politie - Davis", coords = vector4(362.7, -1588.54, 29.29, 141.93)},
    },
 }
 
@@ -238,7 +256,7 @@ Config.Items = {
             price = 0,
             amount = 1,
             info = {
-                serie = "",                
+                serie = "",
                 attachments = {
                     {component = "COMPONENT_AT_PI_FLSH", label = "Flashlight"},
                 }
@@ -252,7 +270,7 @@ Config.Items = {
             price = 0,
             amount = 1,
             info = {
-                serie = "",            
+                serie = "",
             },
             type = "weapon",
             slot = 2,
@@ -277,7 +295,7 @@ Config.Items = {
             price = 0,
             amount = 1,
             info = {
-                serie = "",                
+                serie = "",
                 attachments = {
                     {component = "COMPONENT_AT_SCOPE_MACRO_02", label = "1x Scope"},
                     {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
