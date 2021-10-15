@@ -631,3 +631,27 @@ CreateThread(function()
         Wait(sleep)
     end
 end)
+RegisterNetEvent('police:openPDArmory')
+AddEventHandler('police:openPDArmory', function()
+    if onDuty then
+        local authorizedItems = {
+            label = "Police Armory",
+            slots = 30,
+            items = {}
+        }
+        local index = 1
+        for _, armoryItem in pairs(Config.Items.items) do
+            for i=1, #armoryItem.authorizedJobGrades do
+                if armoryItem.authorizedJobGrades[i] == PlayerJob.grade.level then
+                    authorizedItems.items[index] = armoryItem
+                    authorizedItems.items[index].slot = index
+                    index = index + 1
+                end
+            end
+        end
+        SetWeaponSeries()
+        TriggerServerEvent("inventory:server:OpenInventory", "shop", "police", authorizedItems)
+    else
+        QBCore.Functions.Notify("You must be on duty to access the armory!", "error")
+    end
+end)
