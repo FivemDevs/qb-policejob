@@ -447,7 +447,7 @@ end)
 QBCore.Functions.CreateUseableItem("handcuffs", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player.Functions.GetItemByName(item) then
+    if Player.Functions.GetItemByName(item.name) then
         TriggerClientEvent("police:client:CuffPlayerSoft", src)
     end
 end)
@@ -455,7 +455,7 @@ end)
 QBCore.Functions.CreateUseableItem("moneybag", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player.Functions.GetItemByName(item) then
+    if Player.Functions.GetItemByName(item.name) then
         if item.info and item.info ~= "" then
             if Player.PlayerData.job.name ~= "police" then
                 if Player.Functions.RemoveItem("moneybag", 1, item.slot) then
@@ -657,6 +657,18 @@ QBCore.Functions.CreateCallback('police:server:IsPoliceForcePresent', function(s
 end)
 
 -- Events
+
+RegisterNetEvent('police:server:policeAlert', function(text)
+    local src = source
+    local ped = GetPlayerPed(src)
+    local coords = GetEntityCoords(ped)
+    local players = QBCore.Functions.GetQBPlayers()
+    for k,v in pairs(players) do
+        if v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
+            TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, text)
+        end
+    end
+end)
 
 RegisterNetEvent('police:server:TakeOutImpound', function(plate)
     local src = source
